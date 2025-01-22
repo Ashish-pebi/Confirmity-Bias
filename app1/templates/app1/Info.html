@@ -1,0 +1,183 @@
+{% extends "global/Page.html" %}
+{% block title %}
+    <span style="font-family: 'Courier New', Courier, monospace; color: #2e8b57;">Read the following Passage Carefully......</span>
+{% endblock %}
+{% block content %}
+<!-- Add Google Font 'Poppins' for consistent styling -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+    }
+
+    h1 {
+        font-family: 'Poppins', sans-serif; /* Applying the Poppins font to the title */
+        font-size: 28px;
+        color: #333;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-family: 'Poppins', sans-serif;
+        font-size: 16px;
+        font-weight: bold; /* Make the additional text bold */
+        color: #666;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    form {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+        color: #555;
+    }
+
+    .error-list {
+        color: #d9534f;
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    .error-list li {
+        margin-bottom: 5px;
+    }
+
+    button[type="submit"],
+    .prev-button {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+        margin-top: 10px; /* Adjusted margin for better spacing */
+    }
+
+    button[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #45a049;
+    }
+
+    .prev-button {
+        background-color: #007bff;
+        color: white;
+        margin-bottom: 10px; /* Space between Previous and Next buttons */
+    }
+
+    .prev-button:hover {
+        background-color: #0056b3;
+    }
+
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 14px;
+        }
+
+        form {
+            padding: 15px;
+        }
+
+        button[type="submit"],
+        .prev-button {
+            padding: 10px;
+        }
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        background-color: #f9f9f9; /* Professional light gray background */
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    th, td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #f4f4f4;
+        color: #333;
+    }
+
+    tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    thead th {
+        border-bottom: 2px solid #4CAF50;
+    }
+</style>
+
+    <h1>Your Vote Matters</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                {% for header in headers %}
+                    <th>{{ header }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+                <tr>
+                    {% for cell in row %}
+                        <td>{{ cell }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <form method="post">
+        <div class="form-group">
+            
+            {{ formfields }}
+        </div>
+        
+        <div>
+            {% if form.Choice.errors %}
+                <ul class="error-list">
+                    {% for error in form.Choice.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+        
+        <button type="button" class="prev-button" onclick="history.back()">Previous</button>
+        <button type="submit">Next</button>
+    </form>
+{% endblock %}

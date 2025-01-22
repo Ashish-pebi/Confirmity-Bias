@@ -1,0 +1,91 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    <span style="font-family: 'Courier New', Courier, monospace; color: #2e8b57;">Hello There,</span>
+{% endblock %}
+
+{% block content %}
+
+<style>
+    /* General styling for the instructions box */
+    .instructions {
+        background-color: rgb(247, 247, 247);
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        line-height: 1.6;
+    }
+    
+    /* Center the next button and style it */
+    .next-button {
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    .next-button button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
+    
+    .next-button button:hover {
+        background-color: #45a049;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .instructions {
+            font-size: 14px;
+        }
+        .next-button button {
+            width: 100%;
+            padding: 12px;
+        }
+    }
+    
+    /* Styling for the progress bar */
+    .progress-container {
+        margin-bottom: 20px;
+    }
+    
+    .progress-bar {
+        width: 50%;
+        height: 10px;
+        background-color: #4CAF50;
+        border-radius: 5px;
+        margin-bottom: 5px;
+    }
+    
+    .progress-text {
+        text-align: center;
+        font-size: 14px;
+        color: #555;
+    }
+</style>
+
+<div class="progress-container">
+    <div class="progress-bar"></div>
+    
+</div>
+
+<div class="instructions">
+    <ol>
+        <li>In this questionnaire, we ask you to evaluate a few statements and answer a few questions.</li>
+        <li>You are free to respond in any way you would like.</li>
+        <li>However, please do not overthink statements and questions, and try to respond with what naturally comes to your mind.</li>
+        <li>We also ask you to respond truthfully and to the best of your ability.</li>
+    </ol>
+</div>
+
+<div class="next-button">
+    {% next_button %}
+</div>
+
+{% endblock %}

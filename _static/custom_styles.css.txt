@@ -1,0 +1,75 @@
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Center the Form on the Page */
+form {
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    max-width: 600px;
+}
+
+/* Form Field Styling */
+.form-field {
+    margin-bottom: 15px;
+}
+
+.form-field label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-field input,
+.form-field select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-field input[type="radio"],
+.form-field input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+/* Button Styling */
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Heading Styling */
+h1 {
+    color: #0056b3;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* File: static/custom_styles.css */
+
+.boxed-text {
+    border: 2px solid #000; /* Border color and thickness */
+    padding: 15px; /* Space between the border and text */
+    margin: 20px 0; /* Space around the box */
+    background-color: #f9f9f9; /* Background color inside the box */
+    border-radius: 5px; /* Rounded corners */
+}

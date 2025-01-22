@@ -1,0 +1,170 @@
+
+{% extends "global/Page.html" %}
+
+{% block title %}
+<span style="font-family: 'Courier New', Courier, monospace; color: #2e8b57;">Just A Few Formalities...</span>
+{% endblock %}
+
+{% block content %}
+<!-- Add Google Font 'Poppins' for consistent styling -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+    }
+
+    h1 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 28px;
+        color: #333;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    form {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+        color: #333;
+        font-size: 18px;
+    }
+
+    .form-group select,
+    .form-group input[type="number"] {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        box-sizing: border-box;
+        font-size: 16px;
+        background-color: #f9f9f9;
+        transition: border-color 0.3s ease;
+    }
+
+    .form-group select:focus,
+    .form-group input[type="number"]:focus {
+        border-color: #4CAF50;
+        outline: none;
+        background-color: #ffffff;
+    }
+
+    .form-group input[type="number"] {
+        -moz-appearance: textfield;
+    }
+
+    .form-group input[type="number"]::-webkit-inner-spin-button,
+    .form-group input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+        padding: 14px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        background-color: #4CAF50;
+        color: white;
+        transition: background-color 0.3s ease;
+        margin-top: 20px;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #45a049;
+    }
+
+    .prev-button {
+        width: 100%;
+        padding: 14px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        background-color: #007bff;
+        color: white;
+        transition: background-color 0.3s ease;
+        margin-top: 10px;
+    }
+
+    .prev-button:hover {
+        background-color: #0056b3;
+    }
+
+    .button-group {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .button-group button {
+        flex: 1;
+        margin: 0 5px;
+    }
+
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 24px;
+        }
+
+        form {
+            padding: 20px;
+        }
+
+        button[type="submit"],
+        .prev-button {
+            padding: 12px;
+        }
+    }
+</style>
+
+<h1>Demographics</h1>
+<form method="post">
+  
+    <div class="form-group">
+        <label for="age">What is your age?</label>
+        <input type="number" id="age" name="age" min="15" max="125" placeholder="Enter your age" required>
+    </div>
+    <div class="form-group">
+        <label for="gender">What is your gender?</label>
+        <select id="gender" name="gender" required>
+            <option value="" disabled selected>Select your gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Prefer not to say">Prefer not to say</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="income">What is your income range?</label>
+        <select id="income" name="Income" required>
+            <option value="" disabled selected>Select your income range</option>
+            <option value="Less than 48,500$ per year">Less than 48,500$ per year</option>
+            <option value="Between 48,500$ and 145,500$ per year">Between 48,500$ and 145,500$ per year</option>
+            <option value="Greater than 145,500$ per year">Greater than 145,500$ per year</option>
+        </select>
+    </div>
+    <div class="button-group">
+        <button type="button" class="prev-button" onclick="window.location.href='/introduction.html/'">Previous</button>
+        <button type="submit">Next</button>
+    </div>
+</form>
+
+{% endblock %}
+
